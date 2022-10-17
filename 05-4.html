@@ -1,0 +1,30 @@
+<html><head></head><body>
+<script>
+ 
+myArr_1 = new Array();//10
+for( i = 0; i < 10; i++ ){
+    myArr_1[i] = i * 2;
+}
+ 
+myArr_2 = new Array();//20
+for( i = 0; i < 10 * 2; i++ ){
+    myArr_2[i] = i;
+}
+ 
+myArr_3 = new Array();//19
+for( i = 0; i < 10; i++ ){
+    myArr_2[i * 2] = i;
+}
+ 
+myArr_4 = myArr_1.concat(myArr_2);//30
+ 
+myArr_5 = [myArr_1, myArr_2, myArr_3, myArr_4];//4
+ 
+document.write("myArr_4 的長度：" + myArr_4.length + "<br>");
+for( i = 0; i < myArr_4.length; i++ ){
+    document.write("第 " + i + " 元素的內容與型別：" + myArr_4[i] + ', ' + typeof(myArr_4[i]) + "<br>");
+}
+ 
+</script>
+ 
+</body></html>
