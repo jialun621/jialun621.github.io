@@ -26,8 +26,13 @@
 		document.getElementById("screen").value="";
 	}
 	function getResult(){
-		var a = document.getElementById("screen").value;
-		document.getElementById("screen").value=eval(a);
+		
+		try {
+			id.value = eval(id.value);
+		}
+		catch(e){
+			alert('Error!');
+		}
 	}
 	</script>
 </head>
@@ -61,7 +66,7 @@
 					<th><input type="button" value="=" onclick="getResult()"></th>
 					<th><input type="button" value="+" onclick="add(this)"></th>
 				</tr>
-			</table>
+		</table>
 		</body>
 	</html>
 		
