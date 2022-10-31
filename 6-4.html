@@ -1,0 +1,44 @@
+<html>
+<head></head>
+<body bgcolor="#ccccff">
+ 
+<canvas width="500" height="1000" id="myCanvas" style="border:1px solid;position:absolute;top:100;left:100;"></canvas>
+<input  id="save" placeholder="線條寬度">
+
+ 
+<script>
+var canvas = document.getElementById("myCanvas"); // 取得物件
+var ctx = canvas.getContext("2d"); // 取得繪圖環境
+var drawMode, mx, my;
+ 
+canvas.onmousedown = function(ev){
+    ctx.beginPath();
+    ctx.strokeStyle = "#000";
+    mx = event.clientX - parseInt(canvas.style.left) + window.pageXOffset;
+    my = event.clientY - parseInt(canvas.style.top) + window.pageYOffset;
+    ctx.moveTo(mx, my);
+    drawMode = true;
+    ctx.lineWidth=document.getElementById("save").value
+}
+ 
+ 
+canvas.onmousemove = function(ev){
+    if(drawMode){
+        mx = event.clientX - parseInt(canvas.style.left) + window.pageXOffset;
+        my = event.clientY - parseInt(canvas.style.top) + window.pageYOffset;
+        ctx.lineTo(mx, my);
+        ctx.stroke();
+    }
+}
+ 
+canvas.onmouseup = function(){
+    drawMode = false;
+}
+ 
+
+     
+   
+
+</script>
+ 
+</body></html>
